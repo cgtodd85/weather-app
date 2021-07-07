@@ -3,6 +3,7 @@ let userInput = document.querySelector("#searchbar");
 const searchBtn = document.querySelector("#search-btn");
 const fiveDayboxes = $(".row");
 let results = document.querySelector("#results");
+const fiveDayContainer = document.querySelector("#five-day");
 // let boxOne = $("#0")
 // let boxTwo = $("#1")
 // let boxThree = $("#2")
@@ -43,10 +44,24 @@ let fiveDay = [
 
 searchBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  fiveDayContainer.innerHTML = ``;
+  fiveDayContainer.innerHTML = `
+  <div class="col" id="0"></div>
+  <div class="col" id="1"></div>
+  <div class="col" id="2"></div>
+  <div class="col" id="3"></div>
+  <div class="col" id="4"></div>`;
   getCityWeather();
 });
 
 userInput.addEventListener("keypress", (e) => {
+  fiveDayContainer.innerHTML = ``;
+  fiveDayContainer.innerHTML = `
+  <div class="col" id="0"></div>
+  <div class="col" id="1"></div>
+  <div class="col" id="2"></div>
+  <div class="col" id="3"></div>
+  <div class="col" id="4"></div>`;
   if (e.keyCode === 13) {
     getCityWeather();
   }
@@ -119,11 +134,12 @@ function oneCallApi(lat, lon) {
 }
 
 /*
-convert date and set as text in eement
 
-link to icon
+add icon for current weather
 
-fiveDay
+add lat lon input options
+add state and country input
+
 
 search history select prev searched cities
 
