@@ -92,15 +92,16 @@ function oneCallApi(lat, lon) {
         fiveDay[i].icon = data.daily[i].weather[0].icon;
         fiveDay[i].temp = data.daily[i].temp.day;
         fiveDay[i].hum = data.daily[i].humidity;
+        let iconLink = `http://openweathermap.org/img/wn/${fiveDay[i].icon}@2x.png`;
+        console.log(iconLink);
       }
       console.log("Five Day Array: ", fiveDay);
     });
 }
 /*
-city name
-date
-icon for weather conditions
-5 day each with temp, conditions, humidity
+convert date and set as text in eement
+
+link to icon
 
 fiveDay
 
