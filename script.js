@@ -98,6 +98,8 @@ function oneCallApi(lat, lon) {
         fiveDay[i].icon = data.daily[i].weather[0].icon;
         fiveDay[i].temp = data.daily[i].temp.day;
         fiveDay[i].hum = data.daily[i].humidity;
+        let temp = Math.round(((fiveDay[i].temp - 273) * 9) / 5 + 32);
+        let humidity = fiveDay[i].hum;
         let currentIcon = fiveDay[i].icon;
         let milliseconds = fiveDay[i].date * 1000;
         let dateObject = new Date(milliseconds);
@@ -106,6 +108,8 @@ function oneCallApi(lat, lon) {
         console.log(iconLink);
         $(`#${i}`).append(
           `<p>${humanDateFormat}<p>
+          <p>Temp: ${temp} F<p>
+          <p>Humidity: ${humidity}%<p>
           <img src="http://openweathermap.org/img/wn/${currentIcon}@2x.png">`
         );
       }

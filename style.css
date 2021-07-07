@@ -2,3 +2,12 @@
   border-width: 10px;
   border-color: rgb(255, 255, 255);
 }
+
+#searchbar {
+  background-color: rgba(128, 176, 177, 0.694);
+}
+
+#search-btn {
+  color: rgb(254, 254, 61);
+  background-color: black;
+}
