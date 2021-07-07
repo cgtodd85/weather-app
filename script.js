@@ -99,10 +99,14 @@ function oneCallApi(lat, lon) {
         fiveDay[i].temp = data.daily[i].temp.day;
         fiveDay[i].hum = data.daily[i].humidity;
         let currentIcon = fiveDay[i].icon;
+        let milliseconds = fiveDay[i].date * 1000;
+        let dateObject = new Date(milliseconds);
+        let humanDateFormat = dateObject.toLocaleString();
         let iconLink = `http://openweathermap.org/img/wn/${currentIcon}@2x.png`;
         console.log(iconLink);
         $(`#${i}`).append(
-          `<img src="http://openweathermap.org/img/wn/${currentIcon}@2x.png">`
+          `<p>${humanDateFormat}<p>
+          <img src="http://openweathermap.org/img/wn/${currentIcon}@2x.png">`
         );
       }
 
@@ -110,11 +114,6 @@ function oneCallApi(lat, lon) {
     });
 }
 
-function generateFiveDay(x) {
-  for (i = 0; i < fiveDay.length; i++) {
-    $(`#${i}`).append(`<p>test<p>`);
-  }
-}
 /*
 convert date and set as text in eement
 
