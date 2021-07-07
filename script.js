@@ -1,7 +1,13 @@
 const apiKey = "74974760a33b1dee728fdbda7a227882";
 let userInput = document.querySelector("#searchbar");
 const searchBtn = document.querySelector("#search-btn");
+const fiveDayboxes = $(".row");
 let results = document.querySelector("#results");
+// let boxOne = $("#0")
+// let boxTwo = $("#1")
+// let boxThree = $("#2")
+// let boxFour = $("#3")
+// let boxFive = $("#4")
 let fiveDay = [
   {
     date: "",
@@ -92,11 +98,22 @@ function oneCallApi(lat, lon) {
         fiveDay[i].icon = data.daily[i].weather[0].icon;
         fiveDay[i].temp = data.daily[i].temp.day;
         fiveDay[i].hum = data.daily[i].humidity;
-        let iconLink = `http://openweathermap.org/img/wn/${fiveDay[i].icon}@2x.png`;
+        let currentIcon = fiveDay[i].icon;
+        let iconLink = `http://openweathermap.org/img/wn/${currentIcon}@2x.png`;
         console.log(iconLink);
+        $(`#${i}`).append(
+          `<img src="http://openweathermap.org/img/wn/${currentIcon}@2x.png">`
+        );
       }
+
       console.log("Five Day Array: ", fiveDay);
     });
+}
+
+function generateFiveDay(x) {
+  for (i = 0; i < fiveDay.length; i++) {
+    $(`#${i}`).append(`<p>test<p>`);
+  }
 }
 /*
 convert date and set as text in eement
