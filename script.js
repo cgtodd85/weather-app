@@ -46,22 +46,23 @@ searchBtn.addEventListener("click", (e) => {
   e.preventDefault();
   fiveDayContainer.innerHTML = ``;
   fiveDayContainer.innerHTML = `
-  <div class="col" id="0"></div>
-  <div class="col" id="1"></div>
-  <div class="col" id="2"></div>
-  <div class="col" id="3"></div>
-  <div class="col" id="4"></div>`;
+  <div class="container col" id="0"></div>
+  <div class="container col" id="1"></div>
+  <div class="container col" id="2"></div>
+  <div class="container col" id="3"></div>
+  <div class="container col" id="4"></div>`;
   getCityWeather();
 });
 
 userInput.addEventListener("keypress", (e) => {
   fiveDayContainer.innerHTML = ``;
   fiveDayContainer.innerHTML = `
-  <div class="col" id="0"></div>
-  <div class="col" id="1"></div>
-  <div class="col" id="2"></div>
-  <div class="col" id="3"></div>
-  <div class="col" id="4"></div>`;
+  <div class="container col" id="0"></div>
+  <div class="container col" id="1"></div>
+  <div class="container col" id="2"></div>
+  <div class="container col" id="3"></div>
+  <div class="container col" id="4"></div>
+  `;
   if (e.keyCode === 13) {
     getCityWeather();
   }

@@ -10,23 +10,27 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <link href="style.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <title>Wow Weather!</title>
   </head>
-  <body background="june_sunset.png">
-    <header>wow weather!</header>
-    <div class="row">
-      <input id="searchbar" type="text" placeholder="enter a city" />
-      <button id="search-btn">submit</button>
-    </div>
+  <body>
+    <nav class="navbar-expand-lg bg-warning">
+      <h1>Wow Weather!</h1>
+      <div>
+        <input id="searchbar" type="text" placeholder="enter a city" />
+        <button id="search-btn">submit</button>
+      </div>
+    </nav>
+
+    <!-- start weather data -->
     <div class="container">
       <div id="results"></div>
       <div class="row align-items-end" id="five-day">
-        <div class="col" id="0"></div>
-        <div class="col" id="1"></div>
-        <div class="col" id="2"></div>
-        <div class="col" id="3"></div>
-        <div class="col" id="4"></div>
+        <div class="container col" id="0"></div>
+        <div class="container col" id="1"></div>
+        <div class="container col" id="2"></div>
+        <div class="container col" id="3"></div>
+        <div class="container col" id="4"></div>
       </div>
     </div>
   </body>
