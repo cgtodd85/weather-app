@@ -31,6 +31,10 @@ nav {
   align-items: center;
 } */
 
+#content-area {
+  visibility: hidden;
+}
+
 .wrapper-grid {
   display: grid;
   grid-template-columns: minmax(300px, 1fr);

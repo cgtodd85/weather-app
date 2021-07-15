@@ -4,6 +4,7 @@ const searchBtn = document.querySelector("#search-btn");
 const fiveDayboxes = $(".row");
 let results = document.querySelector("#results");
 const fiveDayContainer = document.querySelector("#five-day");
+const contentArea = document.querySelector("#content-area");
 // let boxOne = $("#0")
 // let boxTwo = $("#1")
 // let boxThree = $("#2")
@@ -44,7 +45,9 @@ let fiveDay = [
 
 searchBtn.addEventListener("click", (e) => {
   e.preventDefault();
+
   fiveDayContainer.innerHTML = ``;
+  contentArea.style.visibility = "visible";
   fiveDayContainer.innerHTML = `
   <div class="container col" id="0"></div>
   <div class="container col" id="1"></div>
@@ -55,15 +58,17 @@ searchBtn.addEventListener("click", (e) => {
 });
 
 userInput.addEventListener("keypress", (e) => {
-  fiveDayContainer.innerHTML = ``;
-  fiveDayContainer.innerHTML = `
+  if (e.keyCode === 13) {
+    fiveDayContainer.innerHTML = ``;
+    contentArea.style.visibility = "visible";
+    fiveDayContainer.innerHTML = `
   <div class="container col" id="0"></div>
   <div class="container col" id="1"></div>
   <div class="container col" id="2"></div>
   <div class="container col" id="3"></div>
   <div class="container col" id="4"></div>
   `;
-  if (e.keyCode === 13) {
+
     getCityWeather();
   }
 });
